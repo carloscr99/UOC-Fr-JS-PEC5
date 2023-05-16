@@ -6,3 +6,31 @@
 - ¿Qué son, para qué sirven y cómo se utilizan las directivas ``ngModel`` y
 ``ngModelChange``?
     - ``ngModel``: Vincula los datos, por lo que cuando el usuario introduce cualquier dato por la interfaz, lo envía al componente, y cuando este responde, devuelve la respuesta a la interfaz.
+    - ``ngModelChange``: Obtiene el nuevo valor del input.
+
+Como vemos en la explicación, un ejemplo de uso sería el siguiente:
+```html
+<div class="form-group">
+  <form>
+    <div class="stock-name">
+      <input type="text"
+             placeholder="Stock Name"
+             name="stockName"
+             [ngModel]="stock.name"
+             (ngModelChange)="stock.name=$event">
+    </div>
+  </form>
+  <button (click)="stock.name='test'">Reset stock name</button>
+</div>
+```
+
+- ¿Qué son, cuáles son y para qué sirven los estados en los formularios dirigidos
+por templates?
+    - Los estados nos permiten conocer es estado del control del formulario (si lo ha visitado, si lo ha cambiado, y si está en un estado válido).
+    - Los estados son: 
+      - ``visited``: Si ha sido visitado, la clase css es ``ng-touched``, mientras que se si no lo ha sido, la clase css es ``ng-untouched``.
+      - ``changed``: Si ha sido modificado (un input, por ejemplo), la clase css es ``ng-dirty``, mientras que si no lo ha sido, la clase css es ``ng-pristine``.
+      - ``valid``: Si el formulario no es válido, la clase css es ``ng-invalid``, mientras que si es válido, es ``ng-valid``.
+
+- ¿Qué ventajas aportan los ``FormGroup`` en la composición de formularios?
+  - Creamos un div con la directiva ``ngModelGroup``, dándole un nombre, y el grupo de elementos crea los elementos necesarios (nombre, precio, código e intercambio en el ejemplo del libro), y estos son visibles en el componente cuando accedemos a todo el set de variables a través de from.value.nombreValor 
