@@ -1,0 +1,8 @@
+- Las principales diferencias entre ``formularios dirigidos por template`` y los ``formularios reactivos`` son:
+  - Los ``dirigidos por template`` recuerdan como se trabajaban en AngularJS ya que usa sintaxis y metodología similar, estos empiezan con la plantilla y utilizan la vinculación de datos para obtener los datos hacia y desde los componentes, mientras que en los ``formularios reactivos``, se definen todos los objetos de control del formulario en el código del componente y se vinculan a los elementos de control de formularios nativos de la plantilla.
+  - Cuando creamos formularios usando el ``template-driven`` declaramos los controles del formulario en la plantilla y añadimos directivas como ``ngModel``, por lo que Angular es el responsable de crear el control de formularios, de la sincronización de datos y los envíos de información al modelo, entre otras muchas cosas.
+  - En los ``formularios reactivos``, son síncronos y como desarrolladores, tenemos un control absoluto sobre como y cuando los datos se sincronizan del modelo al UI y viceversa, por lo que no tenenmos le lidiar con el ciclo de vida de Angular
+
+- ¿Qué son, para qué sirven y cómo se utilizan las directivas ``ngModel`` y
+``ngModelChange``?
+    - ``ngModel``: Vincula los datos, por lo que cuando el usuario introduce cualquier dato por la interfaz, lo envía al componente, y cuando este responde, devuelve la respuesta a la interfaz.
