@@ -1,0 +1,7 @@
+
+<div *ngFor="let article of articles">
+
+    <article-item [article]="article"
+     (articleChanged)="onArticleChanged($event)"></article-item>
+
+</div>
