@@ -327,10 +327,22 @@
   </a>
 </div> -->
 
-<navbar/>
+<navbar (opcionSeleccionada)="cambiarContenido($event)"/>
 
 <div class="content" role="main">
 
-  <article-list />
+
+
+  <div *ngIf="opcionSeleccionada === 'articulos' || opcionSeleccionada === ''">
+    <article-list/>
+  </div>
+  
+  <div *ngIf="opcionSeleccionada === 'art-new-template'">
+    <article-new-template/>
+  </div>
+  
+  <div *ngIf="opcionSeleccionada === 'art-new-reactive'">
+    <!-- Contenido para la opción "Contacto" -->
+  </div>
 
 </div>
