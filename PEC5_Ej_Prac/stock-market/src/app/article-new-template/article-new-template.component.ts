@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Article } from '../article/article-item/Article';
+import { NgForm } from '@angular/forms';
+import { createJsxSelfClosingElement } from 'typescript';
 
 @Component({
   selector: 'article-new-template',
@@ -7,10 +10,23 @@ import { Component } from '@angular/core';
 })
 export class ArticleNewTemplateComponent {
 
-  
-  createArticle(article){
-    console.log("article ->" + article.value);
+  public articulo: Article;
+ 
+
+  constructor(){
+    this.articulo = new Article();
   }
 
+  createArticle(article: NgForm){
+
+    if(article.valid){
+      this.articulo = article.value;
+
+      console.log('a? ->', this.articulo);
+    }else{
+      console.log("no valido");
+    }
+
+  }
 
 }

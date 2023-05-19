@@ -1,32 +1,36 @@
+<h2>Create Stock Form</h2>
 
 <div class="form-group">
-    <form (ngSubmit)="createArticle(articleForm)" #articleForm="ngForm" >
-      <div ngModelGroup="article">
-        <div class="stock-name">
-          <input type="text"
-                placeholder="Stock Name"
-                required
-                name="name"
-                ngModel>
+  <form (ngSubmit)="createArticle(article)" #article="ngForm">
+
+    <div ngModelGroup="articulo">
+     <div class="row">
+      <div class="col-5">
+        <div class="article-name">
+          <input type="text" class="form-control" placeholder="Nombre artículo"
+          required name="name" ngModel #name="ngModel">
         </div>
-        <div class="stock-code">
-          <input type="text"
-                placeholder="Stock Code"
-                required
-                minlength="2"
-                name="code"
-                ngModel>
+        <div class="artcile-price">
+          <input type="number" class="form-control"  placeholder="Precio artículo"
+          required name="price" ngModel >
         </div>
-        <div class="stock-price">
-          <input type="number"
-                placeholder="Stock Price"
-                name="price"
-                required
-                ngModel>
+        <div class="article-url">
+          <input type="text" class="form-control"  placeholder="Enlace artículo"
+          required name="imageUrl" ngModel >
         </div>
-        
+        <div class="article-isOnSale">
+          <input type="checkbox" class="form-check-input"  placeholder="En venta" 
+           name="isOnSale" ngModel>
+          <label for="En venta">En venta</label>
+        </div>
       </div>
-      <button type="submit">Create</button>
-    </form>
-  </div>
-  
+     </div>
+
+    </div>
+    <button type="submit" class="btn btn-sm btn-success">Create</button>
+  </form>
+</div>
+
+<h4>article Name is {{ article.value | json }}</h4>
+
+<h3>articulo {{ name.value }}</h3>

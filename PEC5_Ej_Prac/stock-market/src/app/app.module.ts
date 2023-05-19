@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ArticleItemComponent } from './article/article-item/article-item.component';
@@ -16,7 +17,8 @@ import { ArticleNewTemplateComponent } from './article-new-template/article-new-
     ArticleNewTemplateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

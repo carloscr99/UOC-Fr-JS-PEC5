@@ -333,11 +333,11 @@
 
 
 
-  <div *ngIf="opcionSeleccionada === 'articulos' || opcionSeleccionada === ''">
+  <div *ngIf="opcionSeleccionada === 'articulos'">
     <article-list/>
   </div>
   
-  <div *ngIf="opcionSeleccionada === 'art-new-template'">
+  <div *ngIf="opcionSeleccionada === 'art-new-template'  || opcionSeleccionada === ''">
     <article-new-template/>
   </div>
   
