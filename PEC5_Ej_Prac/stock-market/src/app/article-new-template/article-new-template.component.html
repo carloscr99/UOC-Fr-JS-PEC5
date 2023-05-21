@@ -8,16 +8,34 @@
       <div class="col-5">
         <div class="article-name">
           <input type="text" class="form-control" placeholder="Nombre artículo"
-          required name="name" ngModel #name="ngModel">
+          required name="name" ngModel #name="ngModel" [(ngModel)]="article.name">
         </div>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)"> 
+          <div *ngIf="name.errors?.['required']">
+            El nombre del producto es necesario
+          </div>
+      </div>
         <div class="artcile-price">
           <input type="number" class="form-control"  placeholder="Precio artículo"
-          required name="price" ngModel >
+          required name="price" ngModel #price="ngModel">
         </div>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)"> 
+          <div *ngIf="price.errors?.['required']">
+            El precio del producto es necesario
+          </div>
+      </div>
         <div class="article-url">
           <input type="text" class="form-control"  placeholder="Enlace artículo"
-          required name="imageUrl" ngModel >
+          required name="imageUrl" ngModel #urlProduct="ngModel" pattern="^(http|https)://[a-zA-Z0-9]+\.([a-zA-Z]{2,3})$">
         </div>
+        <div *ngIf="urlProduct.invalid && (urlProduct.dirty || urlProduct.touched)"> 
+          <div *ngIf="urlProduct.errors?.['required']">
+            El url de la imángen del producto es necesario
+          </div>
+          <div *ngIf="urlProduct.errors?.['pattern']">
+            El url de la imángen del producto no tiene un formato válido
+          </div>
+      </div>
         <div class="article-isOnSale">
           <input type="checkbox" class="form-check-input"  placeholder="En venta" 
            name="isOnSale" ngModel>
