@@ -1,11 +1,11 @@
-<h2>Create Stock Form</h2>
+<h2>Crear artículo</h2>
 
 <div class="form-group">
   <form (ngSubmit)="createArticle(article)" #article="ngForm">
 
     <div ngModelGroup="articulo">
       <div class="row">
-        <div class="col-5">
+        <div class="col">
           <div class="article-name">
             <input type="text" class="form-control" placeholder="Nombre artículo" required name="name" ngModel
               #name="ngModel" [(ngModel)]="article.name">
@@ -52,10 +52,7 @@
       </div>
 
     </div>
-    <button type="submit" class="btn btn-sm btn-success">Create</button>
+    <button type="submit" class="btn btn-sm btn-success">Crear</button>
   </form>
 </div>
 
-<h4>article Name is {{ article.value | json }}</h4>
-
-<h3>articulo {{ name.value }}</h3>
