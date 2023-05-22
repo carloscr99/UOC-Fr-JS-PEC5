@@ -25,6 +25,7 @@ export class ArticleNewTemplateComponent {
       console.log('a? ->', this.articulo);
     }else{
       console.log("no valido");
+      return;
     }
 
   }

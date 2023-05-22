@@ -4,45 +4,52 @@
   <form (ngSubmit)="createArticle(article)" #article="ngForm">
 
     <div ngModelGroup="articulo">
-     <div class="row">
-      <div class="col-5">
-        <div class="article-name">
-          <input type="text" class="form-control" placeholder="Nombre artículo"
-          required name="name" ngModel #name="ngModel" [(ngModel)]="article.name">
-        </div>
-        <div *ngIf="name.invalid && (name.dirty || name.touched)"> 
-          <div *ngIf="name.errors?.['required']">
-            El nombre del producto es necesario
+      <div class="row">
+        <div class="col-5">
+          <div class="article-name">
+            <input type="text" class="form-control" placeholder="Nombre artículo" required name="name" ngModel
+              #name="ngModel" [(ngModel)]="article.name">
           </div>
-      </div>
-        <div class="artcile-price">
-          <input type="number" class="form-control"  placeholder="Precio artículo"
-          required name="price" ngModel #price="ngModel">
-        </div>
-        <div *ngIf="price.invalid && (price.dirty || price.touched)"> 
-          <div *ngIf="price.errors?.['required']">
-            El precio del producto es necesario
+          <div *ngIf="name.invalid && (name.dirty || name.touched || article.submitted)">
+            <div *ngIf="name.errors?.['required']">
+              <p class="msgError">
+                El nombre del producto es necesario
+              </p>
+            </div>
           </div>
-      </div>
-        <div class="article-url">
-          <input type="text" class="form-control"  placeholder="Enlace artículo"
-          required name="imageUrl" ngModel #urlProduct="ngModel" pattern="^(http|https)://[a-zA-Z0-9]+\.([a-zA-Z]{2,3})$">
-        </div>
-        <div *ngIf="urlProduct.invalid && (urlProduct.dirty || urlProduct.touched)"> 
-          <div *ngIf="urlProduct.errors?.['required']">
-            El url de la imángen del producto es necesario
+          <div class="artcile-price">
+            <input type="number" class="form-control" placeholder="Precio artículo" required name="price" ngModel
+              #price="ngModel">
           </div>
-          <div *ngIf="urlProduct.errors?.['pattern']">
-            El url de la imángen del producto no tiene un formato válido
+          <div *ngIf="price.invalid && (price.dirty || price.touched || article.submitted)">
+            <div *ngIf="price.errors?.['required']">
+              <p class="msgError">
+                El precio del producto es necesario
+              </p>
+            </div>
           </div>
-      </div>
-        <div class="article-isOnSale">
-          <input type="checkbox" class="form-check-input"  placeholder="En venta" 
-           name="isOnSale" ngModel>
-          <label for="En venta">En venta</label>
+          <div class="article-url">
+            <input type="text" class="form-control" placeholder="Enlace artículo" required name="imageUrl" ngModel
+              #urlProduct="ngModel" pattern="^(http|https)://[a-zA-Z0-9]+\.([a-zA-Z]{2,3})$">
+          </div>
+          <div *ngIf="urlProduct.invalid && (urlProduct.dirty || urlProduct.touched || article.submitted  )">
+            <div *ngIf="urlProduct.errors?.['required']">
+              <p class="msgError">
+                El url de la imángen del producto es necesario
+              </p>
+            </div>
+            <div *ngIf="urlProduct.errors?.['pattern']">
+              <p class="msgError">
+                El url de la imángen del producto no tiene un formato válido
+              </p>
+            </div>
+          </div>
+          <div class="article-isOnSale">
+            <input type="checkbox" class="form-check-input" placeholder="En venta" name="isOnSale" ngModel>
+            <label for="En venta">En venta</label>
+          </div>
         </div>
       </div>
-     </div>
 
     </div>
     <button type="submit" class="btn btn-sm btn-success">Create</button>
