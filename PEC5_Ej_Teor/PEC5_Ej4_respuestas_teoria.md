@@ -1,4 +1,4 @@
-- ¿Qué son, para qué sirven y cómo se utilizan ``FormControl``, ``FormGroup`` y ``FormBuilder``?
+1.  ¿Qué son, para qué sirven y cómo se utilizan ``FormControl``, ``FormGroup`` y ``FormBuilder``?
   - ``FormControl``: Es el core de los formularios reactivos, el cual representa directamente y de forma independiente un elemento en la plantilla. En este nivel, asignamos los valores iniciales y las validaciones, que esto es todo lo que hacemos en los formularios dirigidos por plantillas, ahora se hace por código TypeScript.
 
 Ejemplo de uso:
@@ -132,3 +132,29 @@ export class CreateStockComponent {
 ```
 
 Importamos el ``FormBuilder`` y pasamos lo pasámos como parámetro al constructor, creamos un ``FormGroup`` usando la instáncia inyectada del ``FormBuilder`` y realizamos las inicializaciones pertinentes.
+
+2. ``Validadores`` Angular para los ``formularios reactivos``:
+
+| Validador | Objetivo |
+| ---- | ----- |
+| min | Valida que el valor numérico del campo sea igual o mayor que un valor mínimo especificado |
+| max | Valida que el valor numérico del campo sea igual o menor que un valor máximo especificado |
+| required | Valida que el campo tenga un valor |
+| requiredTrue | Valida que el campo tenga un valor verdadero (por ejemplo, un checkbox marcado) | 
+| email | Valida que el valor del campo sea una dirección de correo electrónico válida |
+| minLength | Valida que la longitud del campo sea igual o mayor que un valor mínimo especificado |
+| maxLength | Valida que la longitud del campo sea igual o menor que un valor máximo especificado | 
+| pattern | Valida que el valor del campo coincida con un patrón de expresión regular |
+| nullValidator | Validador que no realiza ninguna operación |
+| compose | Compone múltiples validadores y devuelve la unión de los mapas de error individuales |
+| composeAsync | Compone múltiples validadores asíncronos y devuelve una única función que es la unión de los objetos individuales de los errores | 
+
+3. ¿Qué son, cuáles son y para qué sirven los ``estados`` en los ``formularios reactivos``?
+
+Los estados en los formularios reactivos són los siguientes:
+   - ``Pristine``:  El formulario no ha sido tocado por le usuario, y es el estado de un formulario cuando se carga por primera vez.
+   - ``Dirty``: El formulario ha sido modificado por el usuario.
+   - ``Touched``: El usuario ha interactuado con el formulario con al menos uno de los campos.
+   - ``Untouched``: El usuario no ha interactuado con ningún campo de los campos del formulario.
+   - ``Valid``: Todos los campos del formulario han pasado las validaciones.
+   - ``Invalid``: Al menos uno de los campos del formulario no cumple con los validaciones que se han definido.
