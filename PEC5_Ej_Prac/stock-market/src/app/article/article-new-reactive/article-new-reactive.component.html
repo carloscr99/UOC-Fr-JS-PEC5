@@ -1,1 +1,23 @@
-<p>article-new-reactive works!</p>
+<h2>Crear artículo</h2>
+
+<div class="form-group">
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+        <div class="article-name">
+            <input type="text" placeholder="Nombre Artículo" class="form-control"
+            name="articleName" formControlName="name">
+        </div>
+        <div class="article-price">
+            <input type="text" placeholder="Precio" class="form-control"
+            name="articlePrice" formControlName="price">
+        </div>
+        <div class="article-urlImage">
+            <input type="text" placeholder="Enlace imágen" class="form-control"
+            name="articleImg" formControlName="urlImage">
+        </div>
+        <div class="article-onSale">
+            <input type="checkbox" class="form-check-input" name="isOnSale">
+            <label for="isOnSale">En venta</label>
+        </div>
+        <button type="submit" class="btn btn-sm btn-success">Crear</button>
+    </form>
+</div>

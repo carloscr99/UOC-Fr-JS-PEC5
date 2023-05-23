@@ -337,12 +337,12 @@
     <article-list/>
   </div>
   
-  <div *ngIf="opcionSeleccionada === 'art-new-template'  || opcionSeleccionada === ''">
+  <div *ngIf="opcionSeleccionada === 'art-new-template'  ">
     <article-new-template/>
   </div>
   
-  <div *ngIf="opcionSeleccionada === 'art-new-reactive'">
-    <!-- Contenido para la opción "Contacto" -->
+  <div *ngIf="opcionSeleccionada === 'art-new-reactive' || opcionSeleccionada === ''">
+    <article-new-reactive/>
   </div>
 
 </div>

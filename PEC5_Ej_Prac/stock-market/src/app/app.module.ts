@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ArticleItemComponent } from './article/article-item/article-item.component';
@@ -20,7 +20,8 @@ import { ArticleNewReactiveComponent } from './article/article-new-reactive/arti
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
