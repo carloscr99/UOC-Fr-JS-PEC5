@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from '../article/article-item/Article';
+import { Article } from '../article-item/Article';
 import { NgForm } from '@angular/forms';
 import { createJsxSelfClosingElement } from 'typescript';
 
