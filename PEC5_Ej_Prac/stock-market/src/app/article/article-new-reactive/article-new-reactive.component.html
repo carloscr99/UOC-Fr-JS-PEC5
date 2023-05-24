@@ -6,14 +6,50 @@
             <input type="text" placeholder="Nombre Artículo" class="form-control"
             name="articleName" formControlName="name">
         </div>
+        <div *ngIf="articleForm.controls.name.invalid && (articleForm.controls.name.dirty || articleForm.controls.name.touched)">
+            <div *ngIf="articleForm.controls.name.errors?.['required']">
+              <p class="msgError">
+                El nombre del producto es necesario
+              </p>
+            </div>
+            <div *ngIf="articleForm.controls.name.errors?.['forbiddenName']">
+                <p class="msgError">
+                     Ese nombre no está permitido para crear el artículo
+                </p>
+              </div>
+          </div>
         <div class="article-price">
             <input type="text" placeholder="Precio" class="form-control"
             name="articlePrice" formControlName="price">
         </div>
+        <div *ngIf="articleForm.controls.price.invalid && (articleForm.controls.price.dirty || articleForm.controls.price.touched) ">
+            <div *ngIf="articleForm.controls.price.errors?.['required']">
+              <p class="msgError">
+                El precio del producto es necesario
+              </p>
+            </div>
+            <div *ngIf="articleForm.controls.price.errors?.['min']">
+                <p class="msgError">
+                  El precio del producto ha de ser superior a 0,1€
+                </p>
+              </div>
+          </div>
         <div class="article-urlImage">
             <input type="text" placeholder="Enlace imágen" class="form-control"
             name="articleImg" formControlName="urlImage">
         </div>
+        <div *ngIf="articleForm.controls.urlImage.invalid && (articleForm.controls.urlImage.dirty || articleForm.controls.urlImage.touched) ">
+            <div *ngIf="articleForm.controls.urlImage.errors?.['required']">
+              <p class="msgError">
+                El url de la imágen del producto es necesario
+              </p>
+            </div>
+            <div *ngIf="articleForm.controls.urlImage.errors?.['pattern']">
+              <p class="msgError">
+                El url de la imángen del producto no tiene un formato válido
+              </p>
+            </div>
+          </div>
         <div class="article-onSale">
             <input type="checkbox" class="form-check-input" name="isOnSale">
             <label for="isOnSale">En venta</label>
