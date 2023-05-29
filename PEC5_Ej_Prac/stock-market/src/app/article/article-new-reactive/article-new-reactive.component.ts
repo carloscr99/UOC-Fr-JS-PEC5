@@ -10,14 +10,7 @@ export class ArticleNewReactiveComponent {
 
   constructor(private fb: FormBuilder) { }
 
-  // articleForm = new FormGroup({
-  //   name: new FormControl(''),
-  //   price: new FormControl(0),
-  //   urlImage: new FormControl('')
-  // })
-
-
-  articleForm = this.fb.group({
+   articleForm = this.fb.group({
     name: ['', [Validators.required, this.NameArticleValidator(/\b(Prueba|Test|Mock|Fake)\b/i)]],
     price: [0, [Validators.required, Validators.min(0.1)]],
     urlImage: ['', [Validators.required, Validators.pattern('^(http|https)://[a-zA-Z0-9]+\.([a-zA-Z]{2,3})$')]],
@@ -25,7 +18,7 @@ export class ArticleNewReactiveComponent {
 
   onSubmit(){
     if(this.articleForm.valid){
-      console.log("Enhorabuena!");
+      console.log("Enhorabuena, el artículo se ha registrado!", this.articleForm.value);
     }
     else{
       console.log("El artículo no es válido");
